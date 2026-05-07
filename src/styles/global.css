@@ -331,6 +331,7 @@ hr {
   width: 100%;
   border: 1px solid var(--border-color);
   display: block;
+  border-radius: 8px;
 }
 
 .landing-feature__kicker {
@@ -371,6 +372,8 @@ hr {
   transition: 0.2s ease;
   cursor: pointer;
   overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
 }
 
 .landing-modules__image {
@@ -439,6 +442,7 @@ hr {
   padding: 24px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }
 
 .landing-value__item h4 {
@@ -459,6 +463,10 @@ hr {
 .landing-insights__item {
   border-bottom: 1px solid var(--border-color);
   padding: 16px 0;
+}
+
+.landing-modules__card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .landing-insights__cat {
