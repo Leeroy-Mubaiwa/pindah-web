@@ -2,72 +2,55 @@
 import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
-const moduleLinks = [
-  { id: "general-ledger", title: "General Ledger" },
-  { id: "accounts-payable", title: "Accounts Payable (AP)" },
-  { id: "accounts-receivable", title: "Accounts Receivable (AR)" },
-  { id: "inventory", title: "Inventory Management" },
-  { id: "procurement", title: "Procurement / Purchasing" },
-  { id: "pos", title: "Point of Sale (POS)" },
-  { id: "sales", title: "Sales & Invoicing" },
-  { id: "projects", title: "Project Management" },
-  { id: "fixed-assets", title: "Fixed Assets" },
-  { id: "budgeting", title: "Budgeting & Forecasting" },
-  { id: "reporting", title: "Reporting & Analytics" },
-  { id: "audit", title: "Audit & Compliance" }
+const modules = [
+  { id: "gl", title: "General Ledger", desc: "Multi-currency posting, exchange rate management, and financial reconciliation.", standards: "IFRS · SI 104" },
+  { id: "accounts-payable", title: "Accounts Payable", desc: "Automates supplier payments, aging analysis, and purchase tracking.", standards: "" },
+  { id: "accounts-receivable", title: "Accounts Receivable", desc: "Manages customer invoicing, collections, and automated reminders.", standards: "ZIMRA Fiscalisation" },
+  { id: "fixed-assets", title: "Fixed Assets", desc: "Tracks asset lifecycle, depreciation, and disposal logs.", standards: "IAS 16" },
+  { id: "inventory", title: "Inventory Management", desc: "Real-time stock tracking across multiple warehouses with FEFO support.", standards: "IAS 2" },
+  { id: "procurement", title: "Procurement", desc: "Workflow-based purchase requisitions, POs, and supplier vetting.", standards: "" },
+  { id: "project-accounting", title: "Project Accounting", desc: "Tracks project-specific costs, budgets, and revenue recognition.", standards: "IAS 11" },
+  { id: "budgeting", title: "Budgeting & Planning", desc: "Collaborative budget creation with actual vs budget monitoring.", standards: "" }
 ];
 ---
 
 <Layout 
-	title="Enterprise Resource Planning (ERP) | Pindah Private Limited"
-	description="Integrated core business operations — finance, procurement, inventory, sales, and projects. Optimized for Zimbabwe multi-currency and ZIMRA compliance."
+	title="Pindah ERP | Intelligent Enterprise Resource Planning"
+	description="The leading ERP solution for Zimbabwe and the region. localized for ZIMRA compliance and multi-currency operations."
 >
 	<HeroBand
 		kicker="Vertical 01"
-		title="Enterprise Resource Planning (ERP)"
-		lead="Integrated core business operations — finance, procurement, inventory, sales, and projects."
-		primaryCtaText="Discuss ERP Implementation"
+		title="Pindah ERP"
+		lead="A comprehensive enterprise resource planning suite designed for the complexities of regional finance and operations."
+		primaryCtaText="Request ERP Demo"
 		primaryCtaHref="/contact"
-		secondaryCtaText="Explore Industries"
-		secondaryCtaHref="/industries"
-		imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
-		imageAlt="Business analytics dashboard and enterprise planning"
-		asideTitle="Operational Focus"
-		asideText="Our ERP centralises all operational data and processes into a single system of record, with native support for Zimbabwe multi-currency workflows, ZIMRA fiscalisation, and practical deployment for SMEs."
+		secondaryCtaText="View Modules"
+		secondaryCtaHref="#modules"
+		imageSrc="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Financial data analysis and enterprise reporting"
+		asideTitle="Regional Compliance"
+		asideText="Pre-configured for ZIMRA Fiscalisation, ZiG/USD multi-currency reporting, and local VAT statutory requirements."
 	/>
 
 	<hr />
 
-	<section>
-		<h2>Enterprise ERP Software for Zimbabwe and Africa</h2>
-		<p>Pindah ERP is designed for organizations that need centralized finance, procurement, stock, sales, and operations in a single platform. The system reduces spreadsheet dependency, improves process control, and gives leadership a real-time view of revenue, cost, and execution performance.</p>
-		<p>For local operations, the platform supports multi-currency transactions (USD/ZiG), VAT-ready invoicing, and practical implementation for teams transitioning from disconnected tools to a structured enterprise operating model.</p>
-	</section>
-
-	<section>
-		<h2>Core ERP Capabilities</h2>
-		<h3>Financial Control</h3>
-		<p>General ledger, accounts payable, accounts receivable, and fixed assets provide a reliable financial backbone with traceable postings and month-end discipline.</p>
-		<h3>Operational Execution</h3>
-		<p>Inventory, procurement, sales, and POS workflows align purchasing, stock movement, and customer transactions to reduce leakage and improve turnaround time.</p>
-		<h3>Planning and Governance</h3>
-		<p>Budgeting, analytics, and audit controls help leadership measure performance, enforce policy, and move from reactive reporting to forward planning.</p>
-	</section>
-
-	<section>
-		<h2>ERP Module Directory</h2>
-		<p>Explore individual module pages for detailed workflows, standards coverage, and implementation scope:</p>
-		<ul>
-			{moduleLinks.map((module) => (
-				<li><a href={`/erp/${module.id}`}>{module.title}</a></li>
+	<section id="modules">
+		<h2>ERP Modules</h2>
+		<div class="grid">
+			{modules.map(module => (
+				<div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
+					<h3>{module.title}</h3>
+					<p style="font-size: 13px; color: #666; min-height: 4.5em;">{module.desc}</p>
+					{module.standards && <p style="font-size: 11px; color: var(--link-color); font-weight: 600;">{module.standards}</p>}
+					<a href={`/erp/${module.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase;">View Module Details ></a>
+				</div>
 			))}
-		</ul>
+		</div>
 	</section>
 
-	<section>
-		<h2>Implementation Approach</h2>
-		<p>ERP projects are executed in phases: discovery, process mapping, data migration, user training, go-live, and stabilization. This approach minimizes disruption while improving user adoption and reporting quality.</p>
-		<p>Common outcomes include shorter closing cycles, better stock accuracy, lower reconciliation effort, and improved decision speed across finance and operations teams.</p>
-		<a href="/contact" class="button">Discuss ERP Implementation</a>
+	<section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+		<h2>Case Study: Delta Corporation</h2>
+		<p>Delta Corporation utilized our multi-currency reconciliation engine to streamline financial reporting across 12 business units during the ZiG transition period.</p>
+		<a href="/contact" class="button">Inquire About ERP</a>
 	</section>
 </Layout>

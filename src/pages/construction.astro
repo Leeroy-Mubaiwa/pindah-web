@@ -3,63 +3,54 @@ import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
 const modules = [
-  { title: "Tendering & Bid Management", desc: "Bid pipeline control from opportunity registration to submission tracking." },
-  { title: "Contract Management", desc: "Contract setup, variation management, and correspondence lifecycle logging." },
-  { title: "Project Planning & Scheduling", desc: "WBS, critical path planning, and progress tracking across project phases." },
-  { title: "Site Management", desc: "Daily diaries, RFIs, instructions, inspections, and material records on site." },
-  { title: "Cost Control & Job Costing", desc: "Budget vs committed vs actual vs forecast with earned value visibility." },
-  { title: "Progress Billing & Valuations", desc: "Monthly valuation workflows, retention tracking, and final account readiness." }
+  { id: "tendering", title: "Tendering & Bid Management", desc: "Bid opportunity registration, BOQ material takeoff, and estimating.", standards: "" },
+  { id: "contract-management", title: "Contract Management", desc: "FIDIC/NEC clause library, variation orders, and correspondence logs.", standards: "FIDIC · NEC" },
+  { id: "construction-planning", title: "Project Planning", desc: "WBS creation, Gantt chart scheduling, and critical path analysis.", standards: "PMI PMBOK" },
+  { id: "site-management", title: "Site Management", desc: "Daily site diaries, RFI registers, and photo logs with GPS tagging.", standards: "" },
+  { id: "subcontractor-control", title: "Subcontractor Control", desc: "Prequalification vetting, progress measurement, and retention management.", standards: "" },
+  { id: "job-costing", title: "Job Costing & Control", desc: "Budget vs actual variance analysis and earned value management (EVM).", standards: "IAS 11 · EVM" },
+  { id: "progress-billing", title: "Progress Billing", desc: "Monthly valuation preparation and Application for Payment (AFP).", standards: "" },
+  { id: "safety-health", title: "Safety & Health (HSE)", desc: "Site safety plans, HIRA logs, and NSSA incident reporting.", standards: "NSSA · ISO 45001" }
 ];
 ---
 
-<Layout
-  title="Construction Management | Pindah Private Limited"
-  description="Project tendering, contract management, site execution, progress billing, and cost control for construction operations."
+<Layout 
+	title="Construction Management | Pindah Private Limited"
+	description="Enterprise project tendering, site management, and cost control for the construction industry. Optimized for FIDIC contracts and IDBZ reporting standards."
 >
-  <HeroBand
-    kicker="Vertical 11"
-    title="Construction Management"
-    lead="Project controls from tender to completion with stronger schedule, cost, and compliance visibility."
-    primaryCtaText="Discuss Construction Solutions"
-    primaryCtaHref="/contact"
-    secondaryCtaText="View DMS"
-    secondaryCtaHref="/dms"
-    imageSrc="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
-    imageAlt="Construction site with cranes and modern buildings"
-    asideTitle="Delivery Discipline"
-    asideText="The platform helps teams maintain project momentum through structured planning, field execution records, and auditable billing and contract workflows."
-  />
+	<HeroBand
+		kicker="Vertical 11"
+		title="Construction Management"
+		lead="Control the full lifecycle of complex infrastructure projects from bidding through to final account with our integrated management suite."
+		primaryCtaText="Request Construction Demo"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View Modules"
+		secondaryCtaHref="#modules"
+		imageSrc="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Construction site with architectural planning"
+		asideTitle="FIDIC Compliant"
+		asideText="Our system handles FIDIC and NEC contract conditions, ensuring legal and financial compliance for major engineering projects."
+	/>
 
-  <hr />
+	<hr />
 
-  <section>
-    <h2>Construction Management Software for Planning, Cost, and Delivery Control</h2>
-    <p>Pindah Construction supports project teams from tendering to close-out with structured controls for scope, schedule, budget, and compliance documentation. It helps organizations reduce project slippage and improve billing confidence.</p>
-    <p>The platform is suited to contractors, project owners, and engineering teams needing traceable operational data across the full project lifecycle.</p>
-  </section>
+	<section id="modules">
+		<h2>Construction Modules</h2>
+		<div class="grid">
+			{modules.map(module => (
+				<div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
+					<h3>{module.title}</h3>
+					<p style="font-size: 13px; color: #666; min-height: 4.5em;">{module.desc}</p>
+					{module.standards && <p style="font-size: 11px; color: var(--link-color); font-weight: 600;">{module.standards}</p>}
+					<a href={`/construction/${module.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase;">View Module Details ></a>
+				</div>
+			))}
+		</div>
+	</section>
 
-  <section>
-    <h2>Project Delivery Priorities</h2>
-    <h3>Commercial Control</h3>
-    <p>Tender, contract, and valuation workflows improve pricing accuracy and reduce disputes during execution.</p>
-    <h3>Site Execution Visibility</h3>
-    <p>Daily records, RFIs, inspections, and progress updates improve accountability across field and management teams.</p>
-    <h3>Cost and Cashflow Discipline</h3>
-    <p>Budget, actual, and forecast tracking improves early warning on overruns and helps protect project margins.</p>
-  </section>
-
-  <section>
-    <h2>Construction Capability Directory</h2>
-    <ul>
-      {modules.map((module) => (
-        <li><strong>{module.title}:</strong> {module.desc}</li>
-      ))}
-    </ul>
-  </section>
-
-  <section>
-    <h2>Implementation Scope</h2>
-    <p>Construction implementations typically include project coding standards, document controls, valuation templates, and site team onboarding. This ensures consistent reporting and faster management decisions across active sites.</p>
-    <a href="/contact" class="button">Discuss Construction Solutions</a>
-  </section>
+	<section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+		<h2>Case Study: IDBZ Infrastructure Compliance</h2>
+		<p>Our platform auto-generates IDBZ-format progress reports and maintains a complete audit trail of variations and payments, providing contractors with a measurable advantage during competitive tendering processes.</p>
+		<a href="/contact" class="button">Build with Pindah</a>
+	</section>
 </Layout>

@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
-const moduleLinks = [
-  { id: "lead-management", title: "Lead Management" },
-  { id: "sales-pipeline", title: "Opportunity & Sales Pipeline" },
-  { id: "contact-account", title: "Contact & Account Management" },
-  { id: "marketing-automation", title: "Marketing Automation" },
-  { id: "helpdesk", title: "Customer Service & Helpdesk" },
-  { id: "quotation-management", title: "Quotation & Proposal Management" },
-  { id: "crm-analytics", title: "CRM Analytics & Reporting" },
-  { id: "loyalty-retention", title: "Loyalty & Retention" }
+const modules = [
+  { id: "lead-management", title: "Lead Management", desc: "Captures, qualifies, and assigns incoming enquiries before they go cold.", standards: "" },
+  { id: "sales-pipeline", title: "Opportunity & Sales Pipeline", desc: "Tracks deals through defined stages with pipeline visibility for management.", standards: "" },
+  { id: "contact-account", title: "Contact & Account Management", desc: "360° view of every customer — contacts, history, transactions, and documents.", standards: "" },
+  { id: "marketing-automation", title: "Marketing Automation", desc: "Plans, executes, and measures campaigns across email, SMS, and WhatsApp.", standards: "GDPR principles" },
+  { id: "helpdesk", title: "Customer Service & Helpdesk", desc: "Manages after-sale support and complaint resolution through a structured ticketing system.", standards: "ISO 10002" },
+  { id: "quotation-management", title: "Quotation & Proposal Management", desc: "Generates branded quotes pulling from product catalogue and pricing.", standards: "" },
+  { id: "crm-analytics", title: "CRM Analytics & Reporting", desc: "Sales intelligence dashboards covering pipeline, performance, and customer value.", standards: "" },
+  { id: "loyalty-retention", title: "Loyalty & Retention", desc: "Manages loyalty programmes, customer tiers, and win-back campaigns.", standards: "" }
 ];
 ---
 
@@ -20,50 +20,37 @@ const moduleLinks = [
 >
 	<HeroBand
 		kicker="Vertical 02"
-		title="Customer Relationship Management (CRM)"
-		lead="Lead-to-loyalty customer lifecycle with structured pipeline, campaign automation, and after-sale service."
-		primaryCtaText="Discuss CRM Integration"
+		title="Customer Relationship Management"
+		lead="Centralise all customer interactions and provide your sales team with a structured system to convert prospects into revenue."
+		primaryCtaText="Request CRM Demo"
 		primaryCtaHref="/contact"
-		secondaryCtaText="View ERP"
-		secondaryCtaHref="/erp"
-		imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
-		imageAlt="Sales and leadership team planning session"
-		asideTitle="Market Fit"
-		asideText="Our CRM centralises customer interactions and helps teams convert prospects into revenue with WhatsApp-first communication, mobile-friendly workflows, and dual-currency quotation support."
+		secondaryCtaText="View Modules"
+		secondaryCtaHref="#modules"
+		imageSrc="https://images.unsplash.com/photo-1552581234-261207845074?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Business team collaborating on customer strategy"
+		asideTitle="WhatsApp First"
+		asideText="Our CRM features native WhatsApp Business API integration for real-time customer engagement in the regional market."
 	/>
 
 	<hr />
 
-	<section>
-		<h2>CRM Software for Lead Management, Sales, and Customer Retention</h2>
-		<p>Pindah CRM gives commercial teams a full customer lifecycle view, from first inquiry to repeat business. It helps organizations standardize outreach, improve conversion rates, and maintain service quality after sale.</p>
-		<p>The platform is designed for regional operating realities, including WhatsApp-first engagement patterns, mobile usage, and multi-currency quotation requirements in Zimbabwe and similar markets.</p>
-	</section>
-
-	<section>
-		<h2>What Teams Use CRM For</h2>
-		<h3>Pipeline Control</h3>
-		<p>Track opportunities by stage, forecast revenue, and identify stalled deals early so managers can intervene before pipeline quality drops.</p>
-		<h3>Marketing and Engagement</h3>
-		<p>Run segmented campaigns across email, SMS, and WhatsApp with measurable impact on response rates and lead progression.</p>
-		<h3>Support and Retention</h3>
-		<p>Manage tickets, response SLAs, and customer health indicators to reduce churn and improve long-term account value.</p>
-	</section>
-
-	<section>
-		<h2>CRM Module Directory</h2>
-		<p>Open any CRM module for a deeper breakdown of workflows and implementation scope:</p>
-		<ul>
-			{moduleLinks.map((module) => (
-				<li><a href={`/crm/${module.id}`}>{module.title}</a></li>
+	<section id="modules">
+		<h2>CRM Modules</h2>
+		<div class="grid">
+			{modules.map(module => (
+				<div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
+					<h3>{module.title}</h3>
+					<p style="font-size: 13px; color: #666; min-height: 4.5em;">{module.desc}</p>
+					{module.standards && <p style="font-size: 11px; color: var(--link-color); font-weight: 600;">{module.standards}</p>}
+					<a href={`/crm/${module.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase;">View Module Details ></a>
+				</div>
 			))}
-		</ul>
+		</div>
 	</section>
 
-	<section>
-		<h2>Implementation and Adoption</h2>
-		<p>Successful CRM implementation includes sales process mapping, contact and account data cleanup, pipeline definitions, and team training on daily usage standards. This creates consistent data and more reliable performance reporting.</p>
-		<p>Most clients see faster follow-up, better forecast visibility, and improved customer retention within early rollout phases.</p>
+	<section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+		<h2>Case Study: Old Mutual Zimbabwe</h2>
+		<p>Old Mutual Zimbabwe deployed our CRM architecture to manage advisor-client relationships across 15 branches. Automated follow-ups and WhatsApp integration lifted policy renewal rates significantly.</p>
 		<a href="/contact" class="button">Discuss CRM Integration</a>
 	</section>
 </Layout>
