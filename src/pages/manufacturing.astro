@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "bom", title: "Bill of Materials (BOM)" },
+  { id: "planning", title: "Production Planning" },
+  { id: "shop-floor", title: "Shop Floor Control" },
+  { id: "quality-control", title: "Quality Control" },
+  { id: "traceability", title: "Batch & Lot Traceability" },
+  { id: "costing", title: "Product Costing" },
+  { id: "maintenance", title: "Machine Maintenance (CMMS)" },
+  { id: "manufacturing-warehouse", title: "Warehouse (Stores)" }
+];
+---
+
+<Layout 
+	title="Manufacturing Management | Pindah Private Limited"
+	description="Comprehensive production planning, shop floor execution, and quality control. Specialized for pharmaceutical and industrial manufacturing in Zimbabwe."
+>
+	<HeroBand
+		kicker="Vertical 04"
+		title="Manufacturing Management"
+		lead="Production planning, shop floor execution, quality control, and batch traceability in one controlled system."
+		primaryCtaText="Discuss Manufacturing Solutions"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View Supply Chain"
+		secondaryCtaHref="/supply-chain"
+		imageSrc="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Modern manufacturing line"
+		asideTitle="Compliance Focus"
+		asideText="Our platform enforces production discipline and supports GMP-aligned quality workflows, with validated batch traceability designed for MCAZ audit readiness."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Manufacturing Software for Production, Quality, and Traceability</h2>
+		<p>Pindah Manufacturing supports end-to-end production operations from planning and material consumption to finished goods and compliance reporting. It provides the data controls required for repeatable output, lower waste, and stronger quality consistency.</p>
+		<p>The solution is suited for regulated and non-regulated environments where batch history, shop-floor accountability, and cost transparency are critical to operational performance.</p>
+	</section>
+
+	<section>
+		<h2>Production Management Focus</h2>
+		<h3>Planning and Execution</h3>
+		<p>Plan work orders against real demand and available materials, then monitor execution with clear shift-level and workstation-level visibility.</p>
+		<h3>Quality and Compliance</h3>
+		<p>Embed quality checks and release controls across production stages to reduce defects and improve audit readiness.</p>
+		<h3>Traceability and Costing</h3>
+		<p>Track batch genealogy and compare standard versus actual costs to improve profitability and risk management.</p>
+	</section>
+
+	<section>
+		<h2>Manufacturing Module Directory</h2>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/manufacturing/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation Approach</h2>
+		<p>Rollouts begin with process mapping, BOM and routing setup, inventory integrity checks, and phased activation of quality and traceability controls. This improves adoption and reduces disruption to live production.</p>
+		<a href="/contact" class="button">Discuss Manufacturing Solutions</a>
+	</section>
+</Layout>

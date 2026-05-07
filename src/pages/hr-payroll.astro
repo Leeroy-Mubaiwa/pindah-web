@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const modules = [
+  { title: "Recruitment & Applicant Tracking", desc: "Structured hiring workflows from job request to offer and onboarding." },
+  { title: "Employee Records Management", desc: "Central employee profiles, contract records, and organizational structure views." },
+  { title: "Leave Management", desc: "Leave balances, approval flows, calendars, and policy compliance checks." },
+  { title: "Payroll Processing", desc: "Statutory deductions and payroll outputs for PAYE, NSSA, and ZIMDEF obligations." },
+  { title: "Performance Management", desc: "KPI-based review cycles, appraisals, and targeted performance planning." },
+  { title: "HR Analytics & Reporting", desc: "Headcount, turnover, labor cost, and compliance reporting for leadership." }
+];
+---
+
+<Layout
+  title="HR & Payroll | Pindah Private Limited"
+  description="Employee lifecycle management including recruitment, records, performance, leave, and statutory payroll processing."
+>
+  <HeroBand
+    kicker="Vertical 08"
+    title="Human Resources (HR) & Payroll"
+    lead="Employee lifecycle and payroll compliance in one operational system."
+    primaryCtaText="Discuss HR & Payroll"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View Accounting"
+    secondaryCtaHref="/accounting"
+    imageSrc="https://images.unsplash.com/photo-1552664193-529251f6f7c2?auto=format&fit=crop&w=1200&q=80"
+    imageAlt="Human resources strategy meeting"
+    asideTitle="Workforce Control"
+    asideText="The suite supports hiring-to-payroll workflows with statutory compliance, cleaner workforce data, and operational visibility for HR and finance leadership."
+  />
+
+  <hr />
+
+  <section>
+    <h2>HR and Payroll Software for Workforce Management and Compliance</h2>
+    <p>Pindah HR & Payroll helps organizations manage employee lifecycle operations from hiring and records to payroll and performance. The goal is consistent workforce governance with reliable statutory compliance outputs.</p>
+    <p>The platform supports businesses that need stronger people-data visibility, clearer policy enforcement, and integrated HR-finance coordination.</p>
+  </section>
+
+  <section>
+    <h2>Workforce Management Outcomes</h2>
+    <h3>People Operations Consistency</h3>
+    <p>Standardized recruitment, records, and leave workflows reduce administrative friction and improve policy adherence.</p>
+    <h3>Payroll Confidence</h3>
+    <p>Statutory deduction handling and payroll controls help reduce errors and improve payroll close reliability.</p>
+    <h3>Leadership Visibility</h3>
+    <p>HR analytics provide management with clear workforce performance, turnover, and labor-cost insights.</p>
+  </section>
+
+  <section>
+    <h2>HR & Payroll Capability Directory</h2>
+    <ul>
+      {modules.map((module) => (
+        <li><strong>{module.title}:</strong> {module.desc}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Implementation and Change Management</h2>
+    <p>Successful rollout includes policy alignment, employee data cleanup, payroll rule configuration, and role-based training for HR, finance, and managers. This improves adoption and reporting quality.</p>
+    <a href="/contact" class="button">Discuss HR & Payroll</a>
+  </section>
+</Layout>

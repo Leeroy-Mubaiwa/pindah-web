@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "patient-registration", title: "Patient Registration" },
+  { id: "outpatient-opd", title: "Outpatient / OPD" },
+  { id: "inpatient-ward", title: "Inpatient / Ward" },
+  { id: "emr", title: "Electronic Medical Records" },
+  { id: "laboratory", title: "Laboratory (LIS)" },
+  { id: "radiology", title: "Radiology (RIS)" },
+  { id: "pharmacy-management", title: "Pharmacy Management" },
+  { id: "theatre-management", title: "Theatre / Operating Suite" },
+  { id: "medical-billing", title: "Billing & Medical Aid" },
+  { id: "health-reporting", title: "Health Information" }
+];
+---
+
+<Layout 
+	title="Hospital & Clinic Management | Pindah Private Limited"
+	description="Comprehensive clinical and administrative operations for hospitals and clinics. Optimized for Zimbabwe Ministry of Health (DHIS2) and Medical Aid billing."
+>
+	<HeroBand
+		kicker="Vertical 09"
+		title="Hospital & Clinic Management"
+		lead="Patient registration, clinical records, pharmacy, billing, and national reporting in a single healthcare workflow."
+		primaryCtaText="Discuss Healthcare Solutions"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View Insurance"
+		secondaryCtaHref="/insurance"
+		imageSrc="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Healthcare professionals reviewing digital records"
+		asideTitle="Healthcare Context"
+		asideText="The platform supports MoHCC DHIS2 reporting, medical aid billing flows, and controlled-medication governance while maintaining clean, interoperable records."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Hospital Management Software for Clinical and Administrative Operations</h2>
+		<p>Pindah Hospital and Clinic Management software unifies patient flow, clinical documentation, diagnostics, pharmacy, and billing into one connected platform. This reduces fragmented records and helps teams deliver safer, faster care.</p>
+		<p>The system is structured for facilities that need both operational efficiency and regulatory alignment across medical aid workflows, national reporting, and clinical data governance.</p>
+	</section>
+
+	<section>
+		<h2>Clinical and Business Value</h2>
+		<h3>Patient Continuity</h3>
+		<p>Maintain complete encounter history from registration to discharge, improving treatment quality and reducing repeat data capture.</p>
+		<h3>Revenue and Claims Control</h3>
+		<p>Align service capture, billing, and medical aid submission to improve collections and reduce avoidable claim rejections.</p>
+		<h3>Reporting and Governance</h3>
+		<p>Support standards-driven coding, health reporting, and auditable activity logs for management and compliance teams.</p>
+	</section>
+
+	<section>
+		<h2>Healthcare Module Directory</h2>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/hospital/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation Considerations</h2>
+		<p>Healthcare deployments prioritize patient master data quality, workflow configuration by department, integration with existing systems, and staged training for clinical and administrative users.</p>
+		<a href="/contact" class="button">Discuss Healthcare Solutions</a>
+	</section>
+</Layout>

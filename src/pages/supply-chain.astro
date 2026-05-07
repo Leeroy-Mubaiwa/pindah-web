@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "demand-planning", title: "Demand Planning" },
+  { id: "srm", title: "Supplier Relationship (SRM)" },
+  { id: "strategic-procurement", title: "Strategic Procurement" },
+  { id: "inventory-optimisation", title: "Inventory Optimisation" },
+  { id: "wms", title: "Warehouse Management (WMS)" },
+  { id: "transport-coordination", title: "Logistics Coordination" },
+  { id: "scm-risk", title: "Supply Chain Risk" },
+  { id: "scm-analytics", title: "SCM Analytics" }
+];
+---
+
+<Layout 
+	title="Supply Chain Management (SCM) | Pindah Private Limited"
+	description="Enterprise demand planning, supplier management, and warehouse optimization. Optimized for Zimbabwe import/export controls and cross-border logistics."
+>
+	<HeroBand
+		kicker="Vertical 12"
+		title="Supply Chain Management (SCM)"
+		lead="Demand planning, supplier management, procurement optimization, and logistics coordination across the full value chain."
+		primaryCtaText="Optimize your Supply Chain"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View Logistics"
+		secondaryCtaHref="/logistics"
+		imageSrc="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Global logistics and supply chain operations"
+		asideTitle="Execution Model"
+		asideText="We optimize flow of goods, information, and funds with localized controls for cross-border logistics, exchange constraints, and supplier risk management."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Supply Chain Management Software for Planning, Procurement, and Execution</h2>
+		<p>Pindah SCM helps organizations optimize demand planning, supplier performance, stock strategy, and transport coordination across the end-to-end value chain. The platform is built to reduce uncertainty and improve fulfillment reliability.</p>
+		<p>Teams can align planning, sourcing, warehouse, and logistics operations around shared data and measurable performance indicators.</p>
+	</section>
+
+	<section>
+		<h2>Strategic Value</h2>
+		<h3>Planning Accuracy</h3>
+		<p>Demand and inventory tools reduce stockouts, overstocking, and emergency purchasing by improving forecast quality.</p>
+		<h3>Supplier and Procurement Control</h3>
+		<p>Structured sourcing and scorecards improve supplier accountability, procurement consistency, and spend visibility.</p>
+		<h3>Operational Visibility</h3>
+		<p>Unified insights across orders, stock, shipments, and delivery performance help leaders respond earlier to disruptions.</p>
+	</section>
+
+	<section>
+		<h2>SCM Module Directory</h2>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/supply-chain/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation Path</h2>
+		<p>SCM rollout is usually phased from demand and procurement controls to warehouse and transport integration. This helps organizations stabilize data and process quality before scaling automation across the chain.</p>
+		<a href="/contact" class="button">Optimize your Supply Chain</a>
+	</section>
+</Layout>

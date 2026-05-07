@@ -1,17 +1,84 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
 
+const verticals = [
+  { id: "erp", title: "ERP", desc: "Finance, procurement, inventory, and projects." },
+  { id: "crm", title: "CRM", desc: "Lead-to-loyalty customer lifecycle and service." },
+  { id: "frame", title: "School Management", desc: "Academics, fees, and parent engagement (Frame)." },
+  { id: "manufacturing", title: "Manufacturing", desc: "Production planning and batch traceability." },
+  { id: "insurance", title: "Insurance", desc: "Policy admin, underwriting, and claims." },
+  { id: "accounting", title: "Accounting", desc: "Standalone multi-currency SME accounting." },
+  { id: "logistics", title: "Logistics", desc: "Route optimisation and driver tracking." },
+  { id: "hr-payroll", title: "HR & Payroll", desc: "Employee records and multi-currency payroll." },
+  { id: "hospital", title: "Healthcare", desc: "Patient records, billing, and DHIS2 reporting." },
+  { id: "dms", title: "DMS", desc: "Document capture and digital signatures." },
+  { id: "construction", title: "Construction", desc: "Tendering, site management, and cost control." },
+  { id: "supply-chain", title: "Supply Chain", desc: "Demand planning and WMS optimization." }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout 
+	title="Pindah Private Limited | Intelligent Enterprise Infrastructure"
+	description="Leading provider of localized enterprise software in Africa. 12 industry verticals and 120+ specialized modules designed for regional realities."
+>
+	<HeroBand
+		kicker="Enterprise software, localized for Africa"
+		title="Intelligent Infrastructure for African Institutions."
+		lead="Pindah transforms how organizations operate through localized, high-performance software built for regional economic and regulatory realities."
+		primaryCtaText="Inquire Now"
+		primaryCtaHref="/contact"
+		secondaryCtaText="Explore Modules"
+		secondaryCtaHref="#verticals"
+		imageSrc="/images/hero.png"
+		imageAlt="Enterprise operations control center"
+		asideTitle="Corporate Mission"
+		asideText="We bridge the technology gap with enterprise-grade systems that understand local contexts, operate within regional cost constraints, and deliver measurable outcomes without extensive technical infrastructure."
+	/>
+
+	<hr />
+
+	<section id="verticals">
+		<h2>Enterprise Module Directory</h2>
+		<p style="margin-bottom: 32px;">Explore our comprehensive suite of 120+ modules across 12 specialized industry verticals.</p>
+		
+		<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+			{verticals.map(vertical => (
+				<div style="border: 1px solid var(--border-color); padding: 20px; transition: 0.2s ease; cursor: pointer;" onclick={`window.location.href='/${vertical.id}'`}>
+					<p style="font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 4px;">Vertical</p>
+					<h3 style="margin: 0 0 8px 0; font-size: 18px;">{vertical.title}</h3>
+					<p style="font-size: 13px; color: #666; margin-bottom: 12px;">{vertical.desc}</p>
+					<a href={`/${vertical.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--link-color);">View Vertical ></a>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<hr />
+
+	<section class="grid">
+		<div>
+			<h2>Why Pindah?</h2>
+			<p>Our competitive advantage is built on deep localization and architectural excellence.</p>
+		</div>
+		<div>
+			<h3>Localized Compliance</h3>
+			<p>Pre-configured for ZIMRA (VAT/Fiscalisation), NSSA, ZIMDEF, and regional regulatory standards (MCAZ, IPEC, MoHCC).</p>
+		</div>
+		<div>
+			<h3>Multi-Currency Core</h3>
+			<p>Native support for USD and ZiG environments with real-time exchange rate management and financial reconciliation.</p>
+		</div>
+	</section>
+
+	<section style="background: #000; color: #fff; padding: 60px 40px; margin-top: 60px; text-align: center;">
+		<h2 style="color: #fff; margin-top: 0;">Scale your Digital Transformation.</h2>
+		<p style="color: #ccc; max-width: 600px; margin: 0 auto 32px auto;">Join hundreds of organizations optimizing performance and unlocking data-driven insights with Pindah's modular enterprise infrastructure.</p>
+		<a href="/contact" class="button" style="background: #fff; color: #000 !important;">Request Strategic Consultation</a>
+	</section>
+
+	<section style="font-size: 11px; color: #999; padding-top: 60px; text-align: center;">
+		<p>Pindah Private Limited · Harare, Zimbabwe · admin@pindah.org · +263 774 454 447</p>
+		<p style="margin-top: 12px;">SEO: Zimbabwe ERP, School Management Africa, ZIMRA Fiscalisation Software, NSSA Payroll Zimbabwe, MCAZ Batch Traceability, IPEC Insurance Software, African EdTech Solutions.</p>
+	</section>
+</Layout>

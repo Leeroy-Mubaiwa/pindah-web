@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  lead: string;
+  imageSrc: string;
+  imageAlt: string;
+  primaryCtaText: string;
+  primaryCtaHref: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  kicker?: string;
+  asideTitle?: string;
+  asideText?: string;
+}
+
+const { 
+  title, 
+  lead, 
+  imageSrc, 
+  imageAlt, 
+  primaryCtaText, 
+  primaryCtaHref, 
+  secondaryCtaText, 
+  secondaryCtaHref,
+  kicker,
+  asideTitle,
+  asideText
+} = Astro.props;
+---
+
+<div class="hero-band">
+  <div class="hero-content">
+    <div class="hero-text-container">
+      {kicker && <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #64B5F6; margin-bottom: 12px; letter-spacing: 0.1em;">{kicker}</p>}
+      <h1 style="color: #fff; margin-bottom: 24px;">{title}</h1>
+      <p style="color: #E0E0E0; font-size: 18px; line-height: 1.6; margin-bottom: 32px; max-width: 540px;">{lead}</p>
+      
+      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 40px;">
+        <a href={primaryCtaHref} class="button" style="background: #fff; color: var(--mckinsey-blue) !important;">{primaryCtaText}</a>
+        {secondaryCtaText && (
+          <a href={secondaryCtaHref} style="color: #fff; font-weight: 600; font-size: 14px;">{secondaryCtaText} &nbsp; ></a>
+        )}
+      </div>
+
+      {(asideTitle || asideText) && (
+        <div style="padding: 20px; background: rgba(255,255,255,0.05); border-left: 3px solid #64B5F6; max-width: 480px;">
+          {asideTitle && <h4 style="color: #fff; margin-top: 0; font-size: 14px; margin-bottom: 8px;">{asideTitle}</h4>}
+          {asideText && <p style="color: #B0BEC5; font-size: 13px; margin-bottom: 0;">{asideText}</p>}
+        </div>
+      )}
+    </div>
+    
+    <div class="hero-image-container">
+      <img src={imageSrc} alt={imageAlt} />
+    </div>
+  </div>
+</div>

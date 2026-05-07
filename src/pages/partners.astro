@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const partnerTracks = [
+  {
+    title: "Referral Partner",
+    desc: "Introduce qualified leads and earn commission when projects close and activate."
+  },
+  {
+    title: "Implementation Partner",
+    desc: "Lead discovery, configuration, training, and go-live support for client deployments."
+  },
+  {
+    title: "Solution Partner",
+    desc: "Build industry accelerators and reusable templates on top of Pindah Basa modules."
+  }
+];
+
+const earningModel = [
+  "Implementation fees on deployment work you deliver",
+  "Commission on subscribed clients you originate",
+  "Renewal and expansion incentives on active accounts",
+  "Training and certification support to increase billable capacity"
+];
+---
+
+<Layout
+  title="Pindah Basa Partners | Grow with Pindah"
+  description="Join the Pindah Basa Partners Program to implement enterprise solutions and earn commissions through delivery, referrals, and account growth."
+>
+  <HeroBand
+    kicker="Pindah Basa Partners"
+    title="Grow with Pindah as a Delivery Partner"
+    lead="Join our partner ecosystem to implement Pindah Basa solutions, support digital transformation projects, and earn recurring commissions."
+    primaryCtaText="Apply as a Partner"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View ERP"
+    secondaryCtaHref="/erp"
+    imageSrc="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80"
+    imageAlt="Enterprise partners collaborating on implementation projects"
+    asideTitle="Program Intent"
+    asideText="The Partners program enables consulting firms, independent implementors, and technology teams to deliver Pindah Basa projects with a clear commercial model."
+  />
+
+  <hr />
+
+  <section>
+    <h2>Why Join the Partners Program?</h2>
+    <p>
+      Similar to SAP and Odoo partner ecosystems, Pindah Basa Partners is designed to scale implementation capacity while
+      creating shared value. Partners help clients adopt modules correctly, shorten time-to-value, and maintain long-term
+      operational performance.
+    </p>
+  </section>
+
+  <section class="grid">
+    {partnerTracks.map((track) => (
+      <div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
+        <h3>{track.title}</h3>
+        <p style="font-size: 13px; color: #666;">{track.desc}</p>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2>How You Earn</h2>
+    <ul>
+      {earningModel.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h3>Partner Enablement</h3>
+      <p>Onboarding includes product walkthroughs, implementation playbooks, and support during your first client rollouts.</p>
+    </div>
+    <div>
+      <h3>Co-Selling Support</h3>
+      <p>Work with our team on proposals, solution scoping, and demos for larger enterprise opportunities.</p>
+    </div>
+    <div>
+      <h3>Delivery Standards</h3>
+      <p>Follow structured implementation standards for discovery, setup, migration, training, and post-go-live stabilization.</p>
+    </div>
+  </section>
+
+  <section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+    <h2>Start Your Partner Application</h2>
+    <p>If you deliver ERP, CRM, logistics, HR, or industry implementation services, apply to become a certified Pindah Basa Partner.</p>
+    <a href="/contact" class="button">Apply Now</a>
+  </section>
+</Layout>

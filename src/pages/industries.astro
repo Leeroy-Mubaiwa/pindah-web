@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+---
+
+<Layout 
+	title="Industry Solutions | Pindah Private Limited"
+	description="Enterprise software solutions for Education, Healthcare, Retail, Manufacturing, Logistics, and Financial Services in Zimbabwe and across Africa."
+>
+	<HeroBand
+		kicker="Industry solutions"
+		title="Industry-Specific Solutions"
+		lead="Pindah's modular platform architecture enables us to serve diverse industries, each with unique operational challenges, regulatory requirements, and success metrics."
+		primaryCtaText="Request Consultation"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View ERP"
+		secondaryCtaHref="/erp"
+		imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Enterprise strategy meeting"
+		asideTitle="Portfolio Breadth"
+		asideText="From education to logistics and financial services, we configure the same enterprise backbone to industry-specific workflows without creating platform sprawl."
+	/>
+
+	<hr style="border: 0; border-top: 1px solid var(--border-color); margin: 24px 0;" />
+
+	<section class="grid">
+		<div>
+			<h3>Education</h3>
+			<p>Comprehensive management for K-12, Tertiary institutions, and professional training centers.</p>
+			<a href="/frame">View Education Solutions ></a>
+		</div>
+		<div>
+			<h3>Healthcare & Pharmacies</h3>
+			<p>Patient record management, medication tracking, and regulatory compliance for clinics and pharmacies.</p>
+			<a href="/erp">View Healthcare Solutions ></a>
+		</div>
+		<div>
+			<h3>Retail & Wholesale</h3>
+			<p>High-performance POS, inventory optimization, and supply chain coordination for retailers of all scales.</p>
+			<a href="/erp">View Retail Solutions ></a>
+		</div>
+	</section>
+
+	<section class="grid">
+		<div>
+			<h3>Manufacturing</h3>
+			<p>Production planning, raw material inventory, and quality control for optimized manufacturing workflows.</p>
+			<a href="/erp">View Manufacturing Solutions ></a>
+		</div>
+		<div>
+			<h3>Logistics & Transport</h3>
+			<p>Fleet management, route optimization, and delivery tracking for high-density logistics networks.</p>
+			<a href="/erp">View Logistics Solutions ></a>
+		</div>
+		<div>
+			<h3>Financial Services</h3>
+			<p>CRM, transaction processing, and risk management for banking, insurance, and micro-finance institutions.</p>
+			<a href="/erp">View Financial Solutions ></a>
+		</div>
+	</section>
+
+	<section class="grid">
+		<div>
+			<h3>Professional Services</h3>
+			<p>Project management, resource allocation, and profitability tracking for consulting and service firms.</p>
+		</div>
+		<div>
+			<h3>Government & NGOs</h3>
+			<p>Transparency, accountability, and citizen/beneficiary service management for the public sector.</p>
+		</div>
+		<div>
+			<h3>SMEs & Large Enterprises</h3>
+			<p>Scalable infrastructure that grows from single-location startups to multi-branch regional enterprises.</p>
+		</div>
+	</section>
+</Layout>

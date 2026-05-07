@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "policy-administration", title: "Policy Administration" },
+  { id: "underwriting", title: "Underwriting" },
+  { id: "claims-management", title: "Claims Management" },
+  { id: "reinsurance", title: "Reinsurance" },
+  { id: "premium-collection", title: "Premium Collection" },
+  { id: "agency-management", title: "Agency & Broker Management" },
+  { id: "insurance-compliance", title: "Regulatory & Compliance" }
+];
+---
+
+<Layout 
+	title="Insurance Management | Pindah Private Limited"
+	description="Comprehensive policy administration, underwriting, and claims management. Optimized for Zimbabwe IPEC compliance and multi-currency premiums."
+>
+	<HeroBand
+		kicker="Vertical 05"
+		title="Insurance Management"
+		lead="Policy administration, underwriting, claims, reinsurance, and regulatory reporting in one core platform."
+		primaryCtaText="Inquire About Insurance Solutions"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View CRM"
+		secondaryCtaHref="/crm"
+		imageSrc="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Insurance and finance planning workspace"
+		asideTitle="Regulatory Readiness"
+		asideText="Built for Zimbabwe conditions, the insurance stack handles IPEC compliance, dual-currency premium operations, and structured claims-to-settlement workflows."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Insurance Software for Policy, Claims, and Regulatory Control</h2>
+		<p>Pindah Insurance provides an integrated operating model for insurers and brokers managing policy administration, underwriting, claims, and compliance reporting. The platform is designed to improve response speed, accuracy, and portfolio visibility.</p>
+		<p>Organizations can manage multi-currency premium operations, intermediary structures, and statutory reporting in a single system while reducing manual handoffs between teams.</p>
+	</section>
+
+	<section>
+		<h2>Operational Priorities</h2>
+		<h3>Policy Lifecycle Management</h3>
+		<p>Handle new business, endorsements, renewals, and cancellations with consistent controls and complete customer history.</p>
+		<h3>Claims and Settlement Workflow</h3>
+		<p>Move from first notification of loss to settlement with transparent reserves, approvals, and payout records.</p>
+		<h3>Compliance and Reporting</h3>
+		<p>Generate regulatory returns, audit trails, and governance evidence required by insurance oversight authorities.</p>
+	</section>
+
+	<section>
+		<h2>Insurance Module Directory</h2>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/insurance/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation and Scale</h2>
+		<p>Typical rollouts include product configuration, policy templates, underwriting rule setup, claims process design, and user enablement by role. Integration can be phased for broker portals, payment channels, and client-facing tools.</p>
+		<a href="/contact" class="button">Inquire About Insurance Solutions</a>
+	</section>
+</Layout>

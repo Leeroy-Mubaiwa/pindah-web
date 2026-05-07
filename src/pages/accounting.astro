@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const modules = [
+  { title: "Chart of Accounts & General Ledger", desc: "Configurable chart of accounts, journal approvals, and period closing controls." },
+  { title: "Bank Reconciliation", desc: "Automated matching for bank statements, including EcoCash merchant reconciliation." },
+  { title: "VAT Management", desc: "Input/output tax tracking and VAT return preparation aligned to ZIMRA requirements." },
+  { title: "Payroll (Accounting-Integrated)", desc: "Statutory deductions, payslips, and payroll journal posting to the ledger." },
+  { title: "Financial Reporting", desc: "Income statement, balance sheet, cash flow, and management reporting packs." },
+  { title: "Cash Flow Management", desc: "Short-term cash planning, due-date alerts, and multi-currency cash visibility." }
+];
+---
+
+<Layout
+  title="Accounting | Pindah Private Limited"
+  description="Standalone accounting for SMEs: general ledger, reconciliation, tax, payroll integration, and reporting built for Zimbabwe realities."
+>
+  <HeroBand
+    kicker="Vertical 06"
+    title="Accounting"
+    lead="Standalone accounting for businesses that need strong financial control without full ERP overhead."
+    primaryCtaText="Request Accounting Demo"
+    primaryCtaHref="/contact"
+    secondaryCtaText="View ERP"
+    secondaryCtaHref="/erp"
+    imageSrc="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+    imageAlt="Business accounting and finance analysis"
+    asideTitle="SME Focus"
+    asideText="The accounting suite combines practical controls, multi-currency capability, and tax-ready workflows to support reliable month-end and confident financial decisions."
+  />
+
+  <hr />
+
+  <section>
+    <h2>Accounting Software for SMEs and Growing Enterprises</h2>
+    <p>Pindah Accounting provides a practical financial management foundation for businesses that need strong controls without full ERP complexity. It centralizes bookkeeping, reconciliation, tax workflows, and reporting in one operating environment.</p>
+    <p>The solution is designed for teams moving from manual records and spreadsheet-heavy processes to structured accounting operations with better visibility and faster month-end closure.</p>
+  </section>
+
+  <section>
+    <h2>Coverage and Functional Scope</h2>
+    <h3>Financial Record Integrity</h3>
+    <p>General ledger and chart-of-accounts controls improve posting quality, reduce reconciliation effort, and strengthen audit readiness.</p>
+    <h3>Cash and Tax Control</h3>
+    <p>Bank reconciliation and VAT workflows improve compliance performance and provide clearer visibility into operating cash position.</p>
+    <h3>Management Reporting</h3>
+    <p>Standardized financial reports support faster decision-making for owners, finance managers, and operational leadership teams.</p>
+  </section>
+
+  <section>
+    <h2>Accounting Capability Directory</h2>
+    <ul>
+      {modules.map((module) => (
+        <li><strong>{module.title}:</strong> {module.desc}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2>Implementation and Adoption</h2>
+    <p>Accounting rollouts typically begin with chart-of-accounts alignment, opening balance validation, and transaction process standardization. This creates a reliable base for reporting and statutory submission workflows.</p>
+    <a href="/contact" class="button">Request Accounting Demo</a>
+  </section>
+</Layout>

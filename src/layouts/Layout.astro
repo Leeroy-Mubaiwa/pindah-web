@@ -1,0 +1,71 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "PINDAH OPERATIONS" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<a href="/">
+					<img src="https://storage.pindah.org/IMAGES/pindah_logo_webp.webp" alt="Pindah Logo" style="height: 24px; width: auto;" />
+				</a>
+				
+				<input type="checkbox" id="menu-toggle" />
+				<label for="menu-toggle" class="menu-icon">☰</label>
+				
+				<ul class="nav-links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/erp">ERP</a></li>
+					<li><a href="/crm">CRM</a></li>
+					<li><a href="/frame">School (SMS)</a></li>
+					<li><a href="/manufacturing">Manufacturing</a></li>
+					<li><a href="/insurance">Insurance</a></li>
+					<li><a href="/accounting">Accounting</a></li>
+					<li><a href="/logistics">Logistics</a></li>
+					<li><a href="/hr-payroll">HR & Payroll</a></li>
+					<li><a href="/hospital">Healthcare</a></li>
+					<li><a href="/dms">DMS</a></li>
+					<li><a href="/construction">Construction</a></li>
+					<li><a href="/supply-chain">Supply Chain</a></li>
+					<li><a href="/partners">Partners</a></li>
+					<li><a href="/about">About</a></li>
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+		
+		<main>
+			<slot />
+		</main>
+		
+		<footer style="margin-top: 48px; border-top: 1px solid var(--border-color); padding: 24px 0;">
+			<div style="display: flex; justify-content: space-between; font-size: 12px; color: #666;">
+				<div>&copy; {new Date().getFullYear()} PINDAH OPERATIONS</div>
+				<div style="display: flex; gap: 24px;">
+					<a href="#">Privacy</a>
+					<a href="#">Terms</a>
+					<a href="#">Cookies</a>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

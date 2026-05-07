@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "document-capture", title: "Capture & Ingestion" },
+  { id: "classification-metadata", title: "Classification & Metadata" },
+  { id: "version-control", title: "Version Control" },
+  { id: "approval-workflow", title: "Approval & Routing" },
+  { id: "search-retrieval", title: "Search & Retrieval" },
+  { id: "dms-security", title: "Access & Security" },
+  { id: "retention-disposal", title: "Retention & Disposal" },
+  { id: "collaboration", title: "Collaboration" }
+];
+---
+
+<Layout 
+	title="Document Management System (DMS) | Pindah Private Limited"
+	description="Enterprise document capture, classification, and secure workflow routing. Digital signature integration and OCR-indexed search for paperless operations."
+>
+	<HeroBand
+		kicker="Vertical 10"
+		title="Document Management System (DMS)"
+		lead="Document capture, classification, version control, workflow routing, and records retention at enterprise scale."
+		primaryCtaText="Go Paperless Today"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View Construction"
+		secondaryCtaHref="/construction"
+		imageSrc="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Digital document workflow on laptop"
+		asideTitle="Platform Utility"
+		asideText="Pindah DMS replaces physical filing with searchable digital records, integrated signature workflows, and retention controls aligned to legal and regulatory requirements."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Document Management Software for Enterprise Records and Workflows</h2>
+		<p>Pindah DMS enables organizations to replace fragmented paper and email workflows with a controlled digital records platform. Teams can capture, classify, secure, and retrieve documents faster while maintaining an auditable history.</p>
+		<p>The platform supports records governance requirements across finance, HR, legal, operations, and compliance units, making it a foundational layer for digital transformation programs.</p>
+	</section>
+
+	<section>
+		<h2>Document Governance Outcomes</h2>
+		<h3>Controlled Information Access</h3>
+		<p>Role-based permissions and structured metadata reduce unauthorized access risk while improving retrieval speed for approved users.</p>
+		<h3>Workflow Efficiency</h3>
+		<p>Approval routing, version control, and searchable archives reduce time spent on document handoffs and manual verification.</p>
+		<h3>Retention and Compliance</h3>
+		<p>Retention schedules and disposition workflows support legal and policy obligations while preserving a clear audit trail.</p>
+	</section>
+
+	<section>
+		<h2>DMS Module Directory</h2>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/dms/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation Scope</h2>
+		<p>Implementations typically start with document taxonomy design, access control policies, and migration of critical repositories, then expand into workflow automation and retention governance.</p>
+		<a href="/contact" class="button">Go Paperless Today</a>
+	</section>
+</Layout>

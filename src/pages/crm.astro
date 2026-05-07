@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "lead-management", title: "Lead Management" },
+  { id: "sales-pipeline", title: "Opportunity & Sales Pipeline" },
+  { id: "contact-account", title: "Contact & Account Management" },
+  { id: "marketing-automation", title: "Marketing Automation" },
+  { id: "helpdesk", title: "Customer Service & Helpdesk" },
+  { id: "quotation-management", title: "Quotation & Proposal Management" },
+  { id: "crm-analytics", title: "CRM Analytics & Reporting" },
+  { id: "loyalty-retention", title: "Loyalty & Retention" }
+];
+---
+
+<Layout 
+	title="Customer Relationship Management (CRM) | Pindah Private Limited"
+	description="Lead-to-loyalty customer lifecycle — sales pipeline, marketing automation, and after-sale service. WhatsApp-first communication for the Zimbabwe market."
+>
+	<HeroBand
+		kicker="Vertical 02"
+		title="Customer Relationship Management (CRM)"
+		lead="Lead-to-loyalty customer lifecycle with structured pipeline, campaign automation, and after-sale service."
+		primaryCtaText="Discuss CRM Integration"
+		primaryCtaHref="/contact"
+		secondaryCtaText="View ERP"
+		secondaryCtaHref="/erp"
+		imageSrc="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Sales and leadership team planning session"
+		asideTitle="Market Fit"
+		asideText="Our CRM centralises customer interactions and helps teams convert prospects into revenue with WhatsApp-first communication, mobile-friendly workflows, and dual-currency quotation support."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>CRM Software for Lead Management, Sales, and Customer Retention</h2>
+		<p>Pindah CRM gives commercial teams a full customer lifecycle view, from first inquiry to repeat business. It helps organizations standardize outreach, improve conversion rates, and maintain service quality after sale.</p>
+		<p>The platform is designed for regional operating realities, including WhatsApp-first engagement patterns, mobile usage, and multi-currency quotation requirements in Zimbabwe and similar markets.</p>
+	</section>
+
+	<section>
+		<h2>What Teams Use CRM For</h2>
+		<h3>Pipeline Control</h3>
+		<p>Track opportunities by stage, forecast revenue, and identify stalled deals early so managers can intervene before pipeline quality drops.</p>
+		<h3>Marketing and Engagement</h3>
+		<p>Run segmented campaigns across email, SMS, and WhatsApp with measurable impact on response rates and lead progression.</p>
+		<h3>Support and Retention</h3>
+		<p>Manage tickets, response SLAs, and customer health indicators to reduce churn and improve long-term account value.</p>
+	</section>
+
+	<section>
+		<h2>CRM Module Directory</h2>
+		<p>Open any CRM module for a deeper breakdown of workflows and implementation scope:</p>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/crm/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation and Adoption</h2>
+		<p>Successful CRM implementation includes sales process mapping, contact and account data cleanup, pipeline definitions, and team training on daily usage standards. This creates consistent data and more reliable performance reporting.</p>
+		<p>Most clients see faster follow-up, better forecast visibility, and improved customer retention within early rollout phases.</p>
+		<a href="/contact" class="button">Discuss CRM Integration</a>
+	</section>
+</Layout>

@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroBand from '../components/HeroBand.astro';
+
+const moduleLinks = [
+  { id: "general-ledger", title: "General Ledger" },
+  { id: "accounts-payable", title: "Accounts Payable (AP)" },
+  { id: "accounts-receivable", title: "Accounts Receivable (AR)" },
+  { id: "inventory", title: "Inventory Management" },
+  { id: "procurement", title: "Procurement / Purchasing" },
+  { id: "pos", title: "Point of Sale (POS)" },
+  { id: "sales", title: "Sales & Invoicing" },
+  { id: "projects", title: "Project Management" },
+  { id: "fixed-assets", title: "Fixed Assets" },
+  { id: "budgeting", title: "Budgeting & Forecasting" },
+  { id: "reporting", title: "Reporting & Analytics" },
+  { id: "audit", title: "Audit & Compliance" }
+];
+---
+
+<Layout 
+	title="Enterprise Resource Planning (ERP) | Pindah Private Limited"
+	description="Integrated core business operations — finance, procurement, inventory, sales, and projects. Optimized for Zimbabwe multi-currency and ZIMRA compliance."
+>
+	<HeroBand
+		kicker="Vertical 01"
+		title="Enterprise Resource Planning (ERP)"
+		lead="Integrated core business operations — finance, procurement, inventory, sales, and projects."
+		primaryCtaText="Discuss ERP Implementation"
+		primaryCtaHref="/contact"
+		secondaryCtaText="Explore Industries"
+		secondaryCtaHref="/industries"
+		imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Business analytics dashboard and enterprise planning"
+		asideTitle="Operational Focus"
+		asideText="Our ERP centralises all operational data and processes into a single system of record, with native support for Zimbabwe multi-currency workflows, ZIMRA fiscalisation, and practical deployment for SMEs."
+	/>
+
+	<hr />
+
+	<section>
+		<h2>Enterprise ERP Software for Zimbabwe and Africa</h2>
+		<p>Pindah ERP is designed for organizations that need centralized finance, procurement, stock, sales, and operations in a single platform. The system reduces spreadsheet dependency, improves process control, and gives leadership a real-time view of revenue, cost, and execution performance.</p>
+		<p>For local operations, the platform supports multi-currency transactions (USD/ZiG), VAT-ready invoicing, and practical implementation for teams transitioning from disconnected tools to a structured enterprise operating model.</p>
+	</section>
+
+	<section>
+		<h2>Core ERP Capabilities</h2>
+		<h3>Financial Control</h3>
+		<p>General ledger, accounts payable, accounts receivable, and fixed assets provide a reliable financial backbone with traceable postings and month-end discipline.</p>
+		<h3>Operational Execution</h3>
+		<p>Inventory, procurement, sales, and POS workflows align purchasing, stock movement, and customer transactions to reduce leakage and improve turnaround time.</p>
+		<h3>Planning and Governance</h3>
+		<p>Budgeting, analytics, and audit controls help leadership measure performance, enforce policy, and move from reactive reporting to forward planning.</p>
+	</section>
+
+	<section>
+		<h2>ERP Module Directory</h2>
+		<p>Explore individual module pages for detailed workflows, standards coverage, and implementation scope:</p>
+		<ul>
+			{moduleLinks.map((module) => (
+				<li><a href={`/erp/${module.id}`}>{module.title}</a></li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Implementation Approach</h2>
+		<p>ERP projects are executed in phases: discovery, process mapping, data migration, user training, go-live, and stabilization. This approach minimizes disruption while improving user adoption and reporting quality.</p>
+		<p>Common outcomes include shorter closing cycles, better stock accuracy, lower reconciliation effort, and improved decision speed across finance and operations teams.</p>
+		<a href="/contact" class="button">Discuss ERP Implementation</a>
+	</section>
+</Layout>
