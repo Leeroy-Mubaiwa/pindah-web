@@ -28,30 +28,27 @@ const {
 } = Astro.props;
 ---
 
-<div class="hero-band">
-  <div class="hero-content">
-    <div class="hero-text-container">
-      {kicker && <p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #64B5F6; margin-bottom: 12px; letter-spacing: 0.1em;">{kicker}</p>}
-      <h1 style="color: #fff; margin-bottom: 24px;">{title}</h1>
-      <p style="color: #E0E0E0; font-size: 18px; line-height: 1.6; margin-bottom: 32px; max-width: 540px;">{lead}</p>
-      
-      <div style="display: flex; gap: 16px; align-items: center; margin-bottom: 40px;">
-        <a href={primaryCtaHref} class="button" style="background: #fff; color: var(--mckinsey-blue) !important;">{primaryCtaText}</a>
-        {secondaryCtaText && (
-          <a href={secondaryCtaHref} style="color: #fff; font-weight: 600; font-size: 14px;">{secondaryCtaText} &nbsp; ></a>
+<section class="hero-band" style={`--hero-bg-image: url('${imageSrc}');`}>
+  <div class="hero-band__inner">
+    <div class="hero-band__content">
+      {kicker && <p class="hero-band__kicker">{kicker}</p>}
+      <h1>{title}</h1>
+      <p class="hero-band__lead">{lead}</p>
+
+      <div class="hero-band__actions">
+        <a href={primaryCtaHref} class="button">{primaryCtaText}</a>
+        {secondaryCtaText && secondaryCtaHref && (
+          <a href={secondaryCtaHref} class="hero-band__secondary-link">{secondaryCtaText} ></a>
         )}
       </div>
 
       {(asideTitle || asideText) && (
-        <div style="padding: 20px; background: rgba(255,255,255,0.05); border-left: 3px solid #64B5F6; max-width: 480px;">
-          {asideTitle && <h4 style="color: #fff; margin-top: 0; font-size: 14px; margin-bottom: 8px;">{asideTitle}</h4>}
-          {asideText && <p style="color: #B0BEC5; font-size: 13px; margin-bottom: 0;">{asideText}</p>}
+        <div class="hero-band__mission">
+          {asideTitle && <h4 class="hero-band__mission-title">{asideTitle}</h4>}
+          {asideText && <p>{asideText}</p>}
         </div>
       )}
     </div>
-    
-    <div class="hero-image-container">
-      <img src={imageSrc} alt={imageAlt} />
-    </div>
+    <span class="hero-band__image-alt">{imageAlt}</span>
   </div>
-</div>
+</section>

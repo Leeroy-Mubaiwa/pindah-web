@@ -3,18 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
 const partnerTracks = [
-  {
-    title: "Referral Partner",
-    desc: "Introduce qualified leads and earn commission when projects close and activate."
-  },
-  {
-    title: "Implementation Partner",
-    desc: "Lead discovery, configuration, training, and go-live support for client deployments."
-  },
-  {
-    title: "Solution Partner",
-    desc: "Build industry accelerators and reusable templates on top of Pindah Basa modules."
-  }
+  "Referral Partner: introduce qualified opportunities and earn commission on successful activations.",
+  "Implementation Partner: lead discovery, configuration, training, and go-live support for client deployments.",
+  "Solution Partner: build vertical accelerators and reusable templates on top of Pindah Basa modules."
 ];
 
 const earningModel = [
@@ -54,13 +45,13 @@ const earningModel = [
     </p>
   </section>
 
-  <section class="grid">
-    {partnerTracks.map((track) => (
-      <div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
-        <h3>{track.title}</h3>
-        <p style="font-size: 13px; color: #666;">{track.desc}</p>
-      </div>
-    ))}
+  <section>
+    <h2>Partner Tracks</h2>
+    <ul>
+      {partnerTracks.map((track) => (
+        <li>{track}</li>
+      ))}
+    </ul>
   </section>
 
   <section>
@@ -72,22 +63,17 @@ const earningModel = [
     </ul>
   </section>
 
-  <section class="grid">
-    <div>
-      <h3>Partner Enablement</h3>
-      <p>Onboarding includes product walkthroughs, implementation playbooks, and support during your first client rollouts.</p>
-    </div>
-    <div>
-      <h3>Co-Selling Support</h3>
-      <p>Work with our team on proposals, solution scoping, and demos for larger enterprise opportunities.</p>
-    </div>
-    <div>
-      <h3>Delivery Standards</h3>
-      <p>Follow structured implementation standards for discovery, setup, migration, training, and post-go-live stabilization.</p>
-    </div>
+  <section>
+    <h2>Enablement and Program Structure</h2>
+    <h3>Partner Enablement</h3>
+    <p>Onboarding includes product walkthroughs, implementation playbooks, and support during your first client rollouts.</p>
+    <h3>Co-Selling Support</h3>
+    <p>Work with our team on proposals, solution scoping, and demos for larger enterprise opportunities.</p>
+    <h3>Delivery Standards</h3>
+    <p>Follow structured implementation standards for discovery, setup, migration, training, and post-go-live stabilization.</p>
   </section>
 
-  <section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+  <section>
     <h2>Start Your Partner Application</h2>
     <p>If you deliver ERP, CRM, logistics, HR, or industry implementation services, apply to become a certified Pindah Basa Partner.</p>
     <a href="/contact" class="button">Apply Now</a>

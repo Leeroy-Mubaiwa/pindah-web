@@ -1,10 +1,10 @@
-/* Microsoft-inspired clean enterprise styling */
+/* Clean enterprise styling */
 :root {
   --font-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
   --text-color: #1f1f1f;
-  --ms-blue: #0f6cbd;
-  --ms-blue-hover: #115ea3;
-  --ms-blue-dark: #0c3b69;
+  --brand-blue: #0f6cbd;
+  --brand-blue-hover: #115ea3;
+  --brand-blue-dark: #0c3b69;
   --link-color: #0f6cbd;
   --border-color: #d1d1d1;
   --bg-color: #ffffff;
@@ -135,17 +135,17 @@ a:hover {
   gap: 32px;
 }
 
-/* Buttons - Microsoft-like dimensions and colors */
+/* Buttons */
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--ms-blue);
+  background: var(--brand-blue);
   color: #fff !important;
   height: 32px;
   padding: 0 16px;
   font-weight: 600;
-  border: 1px solid var(--ms-blue);
+  border: 1px solid var(--brand-blue);
   border-radius: 2px;
   cursor: pointer;
   text-decoration: none !important;
@@ -155,8 +155,8 @@ a:hover {
 }
 
 .button:hover {
-  background: var(--ms-blue-hover);
-  border-color: var(--ms-blue-hover);
+  background: var(--brand-blue-hover);
+  border-color: var(--brand-blue-hover);
 }
 
 hr {
@@ -167,38 +167,63 @@ hr {
 
 /* Reusable HeroBand component */
 .hero-band {
+  position: relative;
+  overflow: hidden;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  background: linear-gradient(130deg, #eef6fc 0%, #ffffff 65%);
   border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   padding: 56px 0;
   margin-bottom: 40px;
 }
 
+.hero-band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  filter: blur(1.5px);
+  transform: scale(1.03);
+}
+
+.hero-band::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(12, 28, 48, 0.82) 0%, rgba(15, 108, 189, 0.64) 52%, rgba(12, 28, 48, 0.8) 100%);
+}
+
 .hero-band__inner {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   padding: 0 24px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  align-items: center;
+}
+
+.hero-band__content {
+  max-width: 760px;
 }
 
 .hero-band__kicker {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--ms-blue);
+  color: #b8dcff;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
+.hero-band h1 {
+  color: #ffffff;
+}
+
 .hero-band__lead {
   font-size: 16px;
-  color: #444;
+  color: #e8f1f8;
   max-width: 700px;
   margin-bottom: 18px;
 }
@@ -210,31 +235,46 @@ hr {
 }
 
 .hero-band__secondary-link {
-  color: #1f1f1f;
+  color: #ffffff;
   font-size: 13px;
   font-weight: 600;
 }
 
 .hero-band__mission {
-  background: #fff;
-  border: 1px solid var(--border-color);
+  margin-top: 18px;
+  max-width: 700px;
+  background: rgba(6, 24, 44, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
   padding: 18px;
   font-size: 13px;
-  color: #555;
+  color: #f2f7fb;
   line-height: 1.6;
 }
 
-.hero-band__image {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border: 1px solid var(--border-color);
-  margin-bottom: 12px;
-  display: block;
+.hero-band__mission-title {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.hero-band__mission p {
+  margin: 0;
+}
+
+.hero-band__image-alt {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 @media (max-width: 768px) {
-  .hero-band__inner { grid-template-columns: 1fr; }
   .hero-band__actions { flex-wrap: wrap; }
   .hero-band { padding: 40px 0; }
 }
