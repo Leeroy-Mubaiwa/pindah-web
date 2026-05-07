@@ -3,18 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
 const verticals = [
-  { id: "erp", title: "ERP", desc: "Finance, procurement, inventory, and projects." },
-  { id: "crm", title: "CRM", desc: "Lead-to-loyalty customer lifecycle and service." },
-  { id: "frame", title: "School Management", desc: "Academics, fees, and parent engagement (Frame)." },
-  { id: "manufacturing", title: "Manufacturing", desc: "Production planning and batch traceability." },
-  { id: "insurance", title: "Insurance", desc: "Policy admin, underwriting, and claims." },
-  { id: "accounting", title: "Accounting", desc: "Standalone multi-currency SME accounting." },
-  { id: "logistics", title: "Logistics", desc: "Route optimisation and driver tracking." },
-  { id: "hr-payroll", title: "HR & Payroll", desc: "Employee records and multi-currency payroll." },
-  { id: "hospital", title: "Healthcare", desc: "Patient records, billing, and DHIS2 reporting." },
-  { id: "dms", title: "DMS", desc: "Document capture and digital signatures." },
-  { id: "construction", title: "Construction", desc: "Tendering, site management, and cost control." },
-  { id: "supply-chain", title: "Supply Chain", desc: "Demand planning and WMS optimization." }
+  { id: "erp", title: "ERP", desc: "Finance, procurement, inventory, and projects.", img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80" },
+  { id: "crm", title: "CRM", desc: "Lead-to-loyalty customer lifecycle and service.", img: "https://images.unsplash.com/photo-1552581234-261207845074?auto=format&fit=crop&w=600&q=80" },
+  { id: "frame", title: "School Management", desc: "Academics, fees, and parent engagement (Frame).", img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" },
+  { id: "manufacturing", title: "Manufacturing", desc: "Production planning and batch traceability.", img: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80" },
+  { id: "insurance", title: "Insurance", desc: "Policy admin, underwriting, and claims.", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" },
+  { id: "accounting", title: "Accounting", desc: "Standalone multi-currency SME accounting.", img: "https://images.unsplash.com/photo-1454165833767-124970425cae?auto=format&fit=crop&w=600&q=80" },
+  { id: "logistics", title: "Logistics", desc: "Route optimisation and driver tracking.", img: "/images/logistics.png" },
+  { id: "hr-payroll", title: "HR & Payroll", desc: "Employee records and multi-currency payroll.", img: "https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&w=600&q=80" },
+  { id: "hospital", title: "Healthcare", desc: "Patient records, billing, and DHIS2 reporting.", img: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80" },
+  { id: "dms", title: "DMS", desc: "Document capture and digital signatures.", img: "https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?auto=format&fit=crop&w=600&q=80" },
+  { id: "construction", title: "Construction", desc: "Tendering, site management, and cost control.", img: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&w=600&q=80" },
+  { id: "supply-chain", title: "Supply Chain", desc: "Demand planning and WMS optimization.", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=600&q=80" }
 ];
 
 const news = [
@@ -43,18 +43,18 @@ const news = [
 		asideText="We bridge the technology gap with enterprise-grade systems that understand local contexts, operate within regional cost constraints, and deliver measurable outcomes without extensive technical infrastructure."
 	/>
 
-	<section style="padding: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+	<section class="landing-feature">
 		<div>
-			<img src="/images/edtech.png" alt="EdTech Africa" style="width: 100%; border: 1px solid var(--border-color);" />
+			<img src="/images/edtech.png" alt="EdTech Africa" class="landing-feature__image" />
 		</div>
 		<div>
-			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--link-color); margin-bottom: 8px;">Education Vertical</p>
+			<p class="landing-feature__kicker">Education Vertical</p>
 			<h2>Frame: Empowering the Next Generation.</h2>
 			<p>Our flagship School Management System (SMS), Frame, is used by thousands of K-12 institutions to manage admissions, academics, and finances. We bridge the gap between school administration and parent engagement through real-time WhatsApp integration and localized ZIMSEC grading modules.</p>
-			<ul style="list-style: none; padding: 0;">
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• ZIMSEC Integration:</strong> Automated marks computation per national standards.</li>
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Multi-Currency Fees:</strong> Seamless management of USD and ZiG balances.</li>
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Parent Portal:</strong> Secure mobile-first access for fees and report cards.</li>
+			<ul class="landing-feature__list">
+				<li><strong>• ZIMSEC Integration:</strong> Automated marks computation per national standards.</li>
+				<li><strong>• Multi-Currency Fees:</strong> Seamless management of USD and ZiG balances.</li>
+				<li><strong>• Parent Portal:</strong> Secure mobile-first access for fees and report cards.</li>
 			</ul>
 			<a href="/frame" class="button">Discover Frame</a>
 		</div>
@@ -62,34 +62,37 @@ const news = [
 
 	<hr />
 
-	<section style="padding: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+	<section class="landing-feature landing-feature--reverse">
 		<div>
-			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--link-color); margin-bottom: 8px;">Logistics Vertical</p>
+			<p class="landing-feature__kicker">Logistics Vertical</p>
 			<h2>Optimized Flow. Real-Time Visibility.</h2>
 			<p>Pindah Logistics provides enterprise fleet management and route optimization tools specifically designed for the African supply chain. From border tracking to driver advances, we ensure your goods move efficiently across borders and regions.</p>
-			<ul style="list-style: none; padding: 0;">
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Route Optimization:</strong> Minimize distance and fuel costs with local-aware routing.</li>
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Driver Advances:</strong> Integrated EcoCash disbursement for operational expenses.</li>
-				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Live Tracking:</strong> Real-time GPS visibility with geofencing and delay alerts.</li>
+			<ul class="landing-feature__list">
+				<li><strong>• Route Optimization:</strong> Minimize distance and fuel costs with local-aware routing.</li>
+				<li><strong>• Driver Advances:</strong> Integrated EcoCash disbursement for operational expenses.</li>
+				<li><strong>• Live Tracking:</strong> Real-time GPS visibility with geofencing and delay alerts.</li>
 			</ul>
 			<a href="/logistics" class="button">Optimize your Fleet</a>
 		</div>
 		<div>
-			<img src="/images/logistics.png" alt="Logistics Tech" style="width: 100%; border: 1px solid var(--border-color);" />
+			<img src="/images/logistics.png" alt="Logistics Tech" class="landing-feature__image" />
 		</div>
 	</section>
 
 	<hr />
 
-	<section id="verticals" style="padding: 40px 0;">
-		<h2 style="text-align: center; border-bottom: none; margin-bottom: 40px;">Enterprise Module Directory</h2>
-		<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+	<section id="verticals" class="landing-modules">
+		<h2 class="landing-modules__title">Enterprise Module Directory</h2>
+		<div class="grid landing-modules__grid">
 			{verticals.map(vertical => (
-				<div style="border: 1px solid var(--border-color); padding: 20px; transition: 0.2s ease; cursor: pointer;" onclick={`window.location.href='/${vertical.id}'`}>
-					<p style="font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; margin-bottom: 4px;">Vertical</p>
-					<h3 style="margin: 0 0 8px 0; font-size: 18px;">{vertical.title}</h3>
-					<p style="font-size: 13px; color: #666; margin-bottom: 12px;">{vertical.desc}</p>
-					<a href={`/${vertical.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase; color: var(--link-color);">View Vertical ></a>
+				<div class="landing-modules__card" onclick={`window.location.href='/${vertical.id}'`}>
+					<img src={vertical.img} alt={vertical.title} class="landing-modules__image" />
+					<div class="landing-modules__body">
+						<p class="landing-modules__kicker">Vertical</p>
+						<h3 class="landing-modules__heading">{vertical.title}</h3>
+						<p class="landing-modules__desc">{vertical.desc}</p>
+						<a href={`/${vertical.id}`} class="landing-modules__link">View Vertical ></a>
+					</div>
 				</div>
 			))}
 		</div>
@@ -97,50 +100,46 @@ const news = [
 
 	<hr />
 
-	<section style="background: var(--grey-bg); padding: 60px 40px; border: 1px solid var(--border-color);">
-		<div style="max-width: 800px; margin: 0 auto; text-align: center;">
-			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 12px;">Architecture & Security</p>
-			<h2>Built for Enterprise Resilience.</h2>
-			<p>Our technology stack is built on modern, cloud-native architecture with a focus on high availability, security, and data integrity. Every Pindah system is designed to operate in environments with variable connectivity while maintaining strict audit trails and data encryption at rest.</p>
-			
-			<div class="grid" style="margin-top: 40px; text-align: left;">
-				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
-					<h4 style="margin-top: 0;">Multi-Currency GL</h4>
-					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Native support for USD and ZiG environments with real-time exchange rate reconciliation and financial reporting.</p>
-				</div>
-				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
-					<h4 style="margin-top: 0;">ZIMRA Certified</h4>
-					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Fully compliant with ZIMRA SI 104 fiscalisation and VAT reporting standards out of the box.</p>
-				</div>
-				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
-					<h4 style="margin-top: 0;">RBZ Compliant</h4>
-					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Integrated exchange control compliance and import/export documentation management.</p>
-				</div>
+	<section class="landing-value">
+		<h2 class="landing-value__title">Built for Regional Realities.</h2>
+		<p class="landing-value__lead">We combine global enterprise standards with local operational awareness to deliver systems that work where it matters most.</p>
+		<div class="grid landing-value__grid">
+			<div class="landing-value__item">
+				<h4>Multi-Currency GL</h4>
+				<p>Native support for USD and ZiG environments with real-time exchange rate reconciliation.</p>
+			</div>
+			<div class="landing-value__item">
+				<h4>ZIMRA Certified</h4>
+				<p>Fully compliant with ZIMRA SI 104 fiscalisation and VAT reporting standards.</p>
+			</div>
+			<div class="landing-value__item">
+				<h4>RBZ Compliant</h4>
+				<p>Integrated exchange control compliance and import/export documentation.</p>
 			</div>
 		</div>
 	</section>
 
-	<section style="padding: 60px 0;">
+	<section class="landing-insights">
 		<h2>Insights & Market Intelligence</h2>
 		<div class="grid">
 			{news.map(item => (
-				<div style="border-bottom: 1px solid var(--border-color); padding: 16px 0;">
-					<p style="font-size: 11px; font-weight: 700; color: var(--link-color); text-transform: uppercase; margin-bottom: 4px;">{item.cat}</p>
-					<h4 style="margin: 0 0 8px 0; font-size: 16px;">{item.title}</h4>
-					<p style="font-size: 12px; color: #999; margin-bottom: 0;">{item.date}</p>
+				<div class="landing-insights__item">
+					<p class="landing-insights__cat">{item.cat}</p>
+					<h4 class="landing-insights__headline">{item.title}</h4>
+					<p class="landing-insights__date">{item.date}</p>
 				</div>
 			))}
 		</div>
 	</section>
 
-	<section style="background: #000; color: #fff; padding: 60px 40px; margin-top: 60px; text-align: center;">
-		<h2 style="color: #fff; margin-top: 0;">Scale your Digital Transformation.</h2>
-		<p style="color: #ccc; max-width: 600px; margin: 0 auto 32px auto;">Join hundreds of organizations optimizing performance and unlocking data-driven insights with Pindah's modular enterprise infrastructure.</p>
-		<a href="/contact" class="button" style="background: #fff; color: #000 !important;">Request Strategic Consultation</a>
+	<section class="landing-cta">
+		<h2>Scale your Digital Transformation.</h2>
+		<p>Join hundreds of organizations optimizing performance and unlocking data-driven insights with Pindah's modular enterprise infrastructure.</p>
+		<a href="/contact" class="button landing-cta__button">Request Strategic Consultation</a>
 	</section>
 
-	<section style="font-size: 11px; color: #999; padding-top: 60px; text-align: center;">
+	<section class="landing-footer-note">
 		<p>Pindah Private Limited · Harare, Zimbabwe · admin@pindah.org · +263 774 454 447</p>
-		<p style="margin-top: 12px;">SEO: Zimbabwe ERP, School Management Africa, ZIMRA Fiscalisation Software, NSSA Payroll Zimbabwe, MCAZ Batch Traceability, IPEC Insurance Software, African EdTech Solutions, Logistics Tech Harare, SAP alternative Zimbabwe.</p>
+		<p>SEO: Zimbabwe ERP, School Management Africa, ZIMRA Fiscalisation Software, NSSA Payroll Zimbabwe, MCAZ Batch Traceability, IPEC Insurance Software, African EdTech Solutions, Logistics Tech Harare, SAP alternative Zimbabwe.</p>
 	</section>
 </Layout>

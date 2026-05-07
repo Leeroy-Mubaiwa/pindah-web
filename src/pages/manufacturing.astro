@@ -2,15 +2,15 @@
 import Layout from '../layouts/Layout.astro';
 import HeroBand from '../components/HeroBand.astro';
 
-const moduleLinks = [
-  { id: "bom", title: "Bill of Materials (BOM)" },
-  { id: "planning", title: "Production Planning" },
-  { id: "shop-floor", title: "Shop Floor Control" },
-  { id: "quality-control", title: "Quality Control" },
-  { id: "traceability", title: "Batch & Lot Traceability" },
-  { id: "costing", title: "Product Costing" },
-  { id: "maintenance", title: "Machine Maintenance (CMMS)" },
-  { id: "manufacturing-warehouse", title: "Warehouse (Stores)" }
+const modules = [
+  { id: "bom", title: "Bill of Materials (BOM)", desc: "Defines the exact recipe or formula for every finished product.", standards: "" },
+  { id: "planning", title: "Production Planning", desc: "Converts demand into feasible production orders with full material awareness.", standards: "MRP II · APICS" },
+  { id: "shop-floor", title: "Shop Floor Control", desc: "Real-time tracking of production execution on the factory floor.", standards: "" },
+  { id: "quality-control", title: "Quality Control", desc: "Enforces quality checks at defined inspection points.", standards: "ISO 9001 · GMP" },
+  { id: "traceability", title: "Batch & Lot Traceability", desc: "Full forward and backward traceability for regulatory audits.", standards: "MCAZ Regulations" },
+  { id: "costing", title: "Product Costing", desc: "Calculates true manufacturing cost and compares standard to actual.", standards: "IAS 2" },
+  { id: "maintenance", title: "Machine Maintenance (CMMS)", desc: "Schedules and tracks maintenance on production equipment.", standards: "ISO 55001" },
+  { id: "manufacturing-warehouse", title: "Warehouse (Stores)", desc: "Manages raw material stores and finished goods within the factory.", standards: "" }
 ];
 ---
 
@@ -21,47 +21,36 @@ const moduleLinks = [
 	<HeroBand
 		kicker="Vertical 04"
 		title="Manufacturing Management"
-		lead="Production planning, shop floor execution, quality control, and batch traceability in one controlled system."
-		primaryCtaText="Discuss Manufacturing Solutions"
+		lead="Drive efficiency from raw material to finished goods with integrated production planning and real-time shop floor execution."
+		primaryCtaText="Request Manufacturing Demo"
 		primaryCtaHref="/contact"
-		secondaryCtaText="View Supply Chain"
-		secondaryCtaHref="/supply-chain"
-		imageSrc="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=1200&q=80"
-		imageAlt="Modern manufacturing line"
-		asideTitle="Compliance Focus"
-		asideText="Our platform enforces production discipline and supports GMP-aligned quality workflows, with validated batch traceability designed for MCAZ audit readiness."
+		secondaryCtaText="View Modules"
+		secondaryCtaHref="#modules"
+		imageSrc="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80"
+		imageAlt="Advanced manufacturing facility and quality control"
+		asideTitle="Pharmaceutical Ready"
+		asideText="Validated systems for MCAZ batch traceability, GMP quality controls, and ISO 9001 compliance."
 	/>
 
 	<hr />
 
-	<section>
-		<h2>Manufacturing Software for Production, Quality, and Traceability</h2>
-		<p>Pindah Manufacturing supports end-to-end production operations from planning and material consumption to finished goods and compliance reporting. It provides the data controls required for repeatable output, lower waste, and stronger quality consistency.</p>
-		<p>The solution is suited for regulated and non-regulated environments where batch history, shop-floor accountability, and cost transparency are critical to operational performance.</p>
-	</section>
-
-	<section>
-		<h2>Production Management Focus</h2>
-		<h3>Planning and Execution</h3>
-		<p>Plan work orders against real demand and available materials, then monitor execution with clear shift-level and workstation-level visibility.</p>
-		<h3>Quality and Compliance</h3>
-		<p>Embed quality checks and release controls across production stages to reduce defects and improve audit readiness.</p>
-		<h3>Traceability and Costing</h3>
-		<p>Track batch genealogy and compare standard versus actual costs to improve profitability and risk management.</p>
-	</section>
-
-	<section>
-		<h2>Manufacturing Module Directory</h2>
-		<ul>
-			{moduleLinks.map((module) => (
-				<li><a href={`/manufacturing/${module.id}`}>{module.title}</a></li>
+	<section id="modules">
+		<h2>Manufacturing Modules</h2>
+		<div class="grid">
+			{modules.map(module => (
+				<div style="border: 1px solid var(--border-color); padding: 20px; background: var(--grey-bg);">
+					<h3>{module.title}</h3>
+					<p style="font-size: 13px; color: #666; min-height: 4.5em;">{module.desc}</p>
+					{module.standards && <p style="font-size: 11px; color: var(--link-color); font-weight: 600;">{module.standards}</p>}
+					<a href={`/manufacturing/${module.id}`} style="font-size: 12px; font-weight: 600; text-transform: uppercase;">View Module Details ></a>
+				</div>
 			))}
-		</ul>
+		</div>
 	</section>
 
-	<section>
-		<h2>Implementation Approach</h2>
-		<p>Rollouts begin with process mapping, BOM and routing setup, inventory integrity checks, and phased activation of quality and traceability controls. This improves adoption and reduces disruption to live production.</p>
+	<section style="background: #f2f2f2; padding: 40px; margin-top: 40px;">
+		<h2>Case Study: Pharmanova Zimbabwe</h2>
+		<p>Pharmanova Zimbabwe utilizes our integrated manufacturing suite covering granulation, quality validation, and regulatory dispatch. MCAZ batch traceability is a core functional requirement driving this implementation.</p>
 		<a href="/contact" class="button">Discuss Manufacturing Solutions</a>
 	</section>
 </Layout>
