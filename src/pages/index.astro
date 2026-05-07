@@ -16,6 +16,13 @@ const verticals = [
   { id: "construction", title: "Construction", desc: "Tendering, site management, and cost control." },
   { id: "supply-chain", title: "Supply Chain", desc: "Demand planning and WMS optimization." }
 ];
+
+const news = [
+  { title: "ZIMRA Fiscalisation: SI 104 Compliance Guide", date: "May 2026", cat: "Regulatory" },
+  { title: "The Rise of Multi-Currency ERP Systems in Africa", date: "April 2026", cat: "Insights" },
+  { title: "Pindah Frame reaches 5,000 School milestone", date: "March 2026", cat: "Company" },
+  { title: "AI-Driven Logistics: Reducing Beit Bridge Delays", date: "March 2026", cat: "Tech" }
+];
 ---
 
 <Layout 
@@ -36,12 +43,46 @@ const verticals = [
 		asideText="We bridge the technology gap with enterprise-grade systems that understand local contexts, operate within regional cost constraints, and deliver measurable outcomes without extensive technical infrastructure."
 	/>
 
+	<section style="padding: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+		<div>
+			<img src="/images/edtech.png" alt="EdTech Africa" style="width: 100%; border: 1px solid var(--border-color);" />
+		</div>
+		<div>
+			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--link-color); margin-bottom: 8px;">Education Vertical</p>
+			<h2>Frame: Empowering the Next Generation.</h2>
+			<p>Our flagship School Management System (SMS), Frame, is used by thousands of K-12 institutions to manage admissions, academics, and finances. We bridge the gap between school administration and parent engagement through real-time WhatsApp integration and localized ZIMSEC grading modules.</p>
+			<ul style="list-style: none; padding: 0;">
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• ZIMSEC Integration:</strong> Automated marks computation per national standards.</li>
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Multi-Currency Fees:</strong> Seamless management of USD and ZiG balances.</li>
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Parent Portal:</strong> Secure mobile-first access for fees and report cards.</li>
+			</ul>
+			<a href="/frame" class="button">Discover Frame</a>
+		</div>
+	</section>
+
 	<hr />
 
-	<section id="verticals">
-		<h2>Enterprise Module Directory</h2>
-		<p style="margin-bottom: 32px;">Explore our comprehensive suite of 120+ modules across 12 specialized industry verticals.</p>
-		
+	<section style="padding: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+		<div>
+			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: var(--link-color); margin-bottom: 8px;">Logistics Vertical</p>
+			<h2>Optimized Flow. Real-Time Visibility.</h2>
+			<p>Pindah Logistics provides enterprise fleet management and route optimization tools specifically designed for the African supply chain. From border tracking to driver advances, we ensure your goods move efficiently across borders and regions.</p>
+			<ul style="list-style: none; padding: 0;">
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Route Optimization:</strong> Minimize distance and fuel costs with local-aware routing.</li>
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Driver Advances:</strong> Integrated EcoCash disbursement for operational expenses.</li>
+				<li style="margin-bottom: 12px; font-size: 14px;"><strong>• Live Tracking:</strong> Real-time GPS visibility with geofencing and delay alerts.</li>
+			</ul>
+			<a href="/logistics" class="button">Optimize your Fleet</a>
+		</div>
+		<div>
+			<img src="/images/logistics.png" alt="Logistics Tech" style="width: 100%; border: 1px solid var(--border-color);" />
+		</div>
+	</section>
+
+	<hr />
+
+	<section id="verticals" style="padding: 40px 0;">
+		<h2 style="text-align: center; border-bottom: none; margin-bottom: 40px;">Enterprise Module Directory</h2>
 		<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
 			{verticals.map(vertical => (
 				<div style="border: 1px solid var(--border-color); padding: 20px; transition: 0.2s ease; cursor: pointer;" onclick={`window.location.href='/${vertical.id}'`}>
@@ -56,18 +97,39 @@ const verticals = [
 
 	<hr />
 
-	<section class="grid">
-		<div>
-			<h2>Why Pindah?</h2>
-			<p>Our competitive advantage is built on deep localization and architectural excellence.</p>
+	<section style="background: var(--grey-bg); padding: 60px 40px; border: 1px solid var(--border-color);">
+		<div style="max-width: 800px; margin: 0 auto; text-align: center;">
+			<p style="text-transform: uppercase; font-size: 11px; font-weight: 700; color: #666; margin-bottom: 12px;">Architecture & Security</p>
+			<h2>Built for Enterprise Resilience.</h2>
+			<p>Our technology stack is built on modern, cloud-native architecture with a focus on high availability, security, and data integrity. Every Pindah system is designed to operate in environments with variable connectivity while maintaining strict audit trails and data encryption at rest.</p>
+			
+			<div class="grid" style="margin-top: 40px; text-align: left;">
+				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
+					<h4 style="margin-top: 0;">Multi-Currency GL</h4>
+					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Native support for USD and ZiG environments with real-time exchange rate reconciliation and financial reporting.</p>
+				</div>
+				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
+					<h4 style="margin-top: 0;">ZIMRA Certified</h4>
+					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Fully compliant with ZIMRA SI 104 fiscalisation and VAT reporting standards out of the box.</p>
+				</div>
+				<div style="padding: 20px; background: #fff; border: 1px solid var(--border-color);">
+					<h4 style="margin-top: 0;">RBZ Compliant</h4>
+					<p style="font-size: 13px; color: #666; margin-bottom: 0;">Integrated exchange control compliance and import/export documentation management.</p>
+				</div>
+			</div>
 		</div>
-		<div>
-			<h3>Localized Compliance</h3>
-			<p>Pre-configured for ZIMRA (VAT/Fiscalisation), NSSA, ZIMDEF, and regional regulatory standards (MCAZ, IPEC, MoHCC).</p>
-		</div>
-		<div>
-			<h3>Multi-Currency Core</h3>
-			<p>Native support for USD and ZiG environments with real-time exchange rate management and financial reconciliation.</p>
+	</section>
+
+	<section style="padding: 60px 0;">
+		<h2>Insights & Market Intelligence</h2>
+		<div class="grid">
+			{news.map(item => (
+				<div style="border-bottom: 1px solid var(--border-color); padding: 16px 0;">
+					<p style="font-size: 11px; font-weight: 700; color: var(--link-color); text-transform: uppercase; margin-bottom: 4px;">{item.cat}</p>
+					<h4 style="margin: 0 0 8px 0; font-size: 16px;">{item.title}</h4>
+					<p style="font-size: 12px; color: #999; margin-bottom: 0;">{item.date}</p>
+				</div>
+			))}
 		</div>
 	</section>
 
@@ -79,6 +141,6 @@ const verticals = [
 
 	<section style="font-size: 11px; color: #999; padding-top: 60px; text-align: center;">
 		<p>Pindah Private Limited · Harare, Zimbabwe · admin@pindah.org · +263 774 454 447</p>
-		<p style="margin-top: 12px;">SEO: Zimbabwe ERP, School Management Africa, ZIMRA Fiscalisation Software, NSSA Payroll Zimbabwe, MCAZ Batch Traceability, IPEC Insurance Software, African EdTech Solutions.</p>
+		<p style="margin-top: 12px;">SEO: Zimbabwe ERP, School Management Africa, ZIMRA Fiscalisation Software, NSSA Payroll Zimbabwe, MCAZ Batch Traceability, IPEC Insurance Software, African EdTech Solutions, Logistics Tech Harare, SAP alternative Zimbabwe.</p>
 	</section>
 </Layout>
